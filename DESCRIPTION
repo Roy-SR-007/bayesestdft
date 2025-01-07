@@ -1,5 +1,5 @@
 Package: bayesestdft
-Title: Estimating the degrees of freedom of the Student-t distribution
+Title: Estimating the degrees of freedom of the Student-t distribution under a Bayesian framework
 Version: 1.0.0
 Authors@R: 
     c(person("Somjit", "Roy",
@@ -8,7 +8,7 @@ Authors@R:
     person("Se Yoon", "Lee",
     email = "seyoonlee.stat.math@gmail.com", 
     role = "aut"))
-Description: bayesestdft is an R package to implement sampling algorithm to estimate the degrees of freedom of the Student-t distribution. 
+Description: This package provides a Bayesian framework to estimate the Student-t distribution's degrees of freedom. Markov Chain Monte Carlo (MCMC) sampling routines are developed as in <https://doi.org/10.3390/axioms11090462> to sample from the posterior distribution of the degrees of freedom. A random walk Metropolis (RMW) algorithm is used for sampling when Jeffreys and Gamma priors are endowed upon the degrees of freedom. In addition, the Metropolis-adjusted Langevin algorithm (MALA) for sampling is used under the Jeffreys prior specification. The Log-normal prior over the degrees of freedom is posed as a viable choice with comparable performance in simulations and real-data application, against other prior choices, where an Elliptical Slice Sampler (ESS) is used to sample from the concerned posterior.
 License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -21,3 +21,6 @@ Imports:
 Depends: 
     R (>= 4.0.4)
 LazyData: true
+Author: Somjit Roy [aut, cre],
+  Se Yoon Lee [aut]
+Maintainer: Somjit Roy <sroy_123@tamu.edu>
