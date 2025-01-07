@@ -2,4 +2,5 @@
 
 export(BayesGA)
 export(BayesJeffreys)
+export(BayesLNP)
 importFrom(numDeriv,grad)
