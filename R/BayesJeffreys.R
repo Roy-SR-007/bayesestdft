@@ -18,47 +18,18 @@
 #'
 #' @examples
 #'
-#' RNGkind(sample.kind = "Rounding")
-#' set.seed(1729)
+#' # data from Student-t distribution with dof = 0.10
+#' y = rt(n = 100, df = 0.1)
 #'
-#' # We model a network with 3 even classes
-#' n1 = 50
-#' n2 = 50
-#' n3 = 50
+#' # running the random walk Metropolis algorithm with default settings to estimate the dof
+#' nu1 = BayesJeffreys(x, sampling.alg = "MH")
+#' # reporting the posterior mean
+#' mean(nu1)
 #'
-#' # Generating block assignments for each of the nodes
-#' n = n1 + n2 + n3
-#' class = rep(c(1, 2, 3), c(n1, n2, n3))
-#'
-#' # Generating the adjacency matrix of the network
-#' # Generate the matrix of connection probabilities
-#' cmat = matrix(
-#'   c(
-#'     30, 0.05, 0.05,
-#'     0.05, 30, 0.05,
-#'     0.05, 0.05, 30
-#'   ),
-#'   ncol = 3,
-#'   byrow = TRUE
-#' )
-#' pmat = cmat / n
-#'
-#' # Creating the n x n adjacency matrix
-#' adj <- matrix(0, n, n)
-#' for (i in 2:n) {
-#'   for (j in 1:(i - 1)) {
-#'     p = pmat[class[i], class[j]] # We find the probability of connection with the weights
-#'     adj[i, j] = rbinom(1, 1, p) # We include the edge with probability p
-#'   }
-#' }
-#'
-#' adjsymm = adj + t(adj)
-#'
-#' # graph from the adjacency matrix
-#' G = igraph::graph_from_adjacency_matrix(adjsymm, mode = "undirected", weighted = NULL)
-#'
-#' # mle of the edge probabilities
-#' get_mle_BetaSBM(G, class)
+#' # running MALA with default settings to estimate the dof
+#' nu2 = BayesJeffreys(x, sampling.alg = "MALA")
+#' # reporting the posterior mean
+#' mean(nu2)
 #'
 #' @references
 #' Lee, S. Y. (2022). "The Use of a Log-Normal Prior for the Student t-Distribution",
