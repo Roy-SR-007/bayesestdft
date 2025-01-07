@@ -1,3 +1,73 @@
+#'
+#' @title Estimating the Student-t degrees of freedom (dof) with a Jeffreys Prior over the dof
+#'
+#' @description `BayesJeffreys` samples from the posterior distribution of the degrees of freedom (dof) with Jeffreys prior endowed upon the dof, using a random walk Metropolis algorithm and Metropolis-adjusted Langevin algorithm (MALA)
+#'
+#' @param y an N-dimensional vector of continuous observations supported on the real-line
+#' @param ini.nu the initial posterior sample value of the degrees of freedom (default is 1)
+#' @param S the number of posterior samples (default is 1000)
+#' @param delta the step size for the respective sampling engines (default is 0.001)
+#' @param sampling.alg takes the choice of the sampling algorithm to be performed, either 'MH' or 'MALA'
+#'
+#' @return A vector of posterior sample estimates
+#' \item{res}{an S-dimensional vector with the posterior samples}
+#'
+#' @importFrom numDeriv grad
+#'
+#' @export
+#'
+#' @examples
+#'
+#' RNGkind(sample.kind = "Rounding")
+#' set.seed(1729)
+#'
+#' # We model a network with 3 even classes
+#' n1 = 50
+#' n2 = 50
+#' n3 = 50
+#'
+#' # Generating block assignments for each of the nodes
+#' n = n1 + n2 + n3
+#' class = rep(c(1, 2, 3), c(n1, n2, n3))
+#'
+#' # Generating the adjacency matrix of the network
+#' # Generate the matrix of connection probabilities
+#' cmat = matrix(
+#'   c(
+#'     30, 0.05, 0.05,
+#'     0.05, 30, 0.05,
+#'     0.05, 0.05, 30
+#'   ),
+#'   ncol = 3,
+#'   byrow = TRUE
+#' )
+#' pmat = cmat / n
+#'
+#' # Creating the n x n adjacency matrix
+#' adj <- matrix(0, n, n)
+#' for (i in 2:n) {
+#'   for (j in 1:(i - 1)) {
+#'     p = pmat[class[i], class[j]] # We find the probability of connection with the weights
+#'     adj[i, j] = rbinom(1, 1, p) # We include the edge with probability p
+#'   }
+#' }
+#'
+#' adjsymm = adj + t(adj)
+#'
+#' # graph from the adjacency matrix
+#' G = igraph::graph_from_adjacency_matrix(adjsymm, mode = "undirected", weighted = NULL)
+#'
+#' # mle of the edge probabilities
+#' get_mle_BetaSBM(G, class)
+#'
+#' @references
+#' Lee, S. Y. (2022). "The Use of a Log-Normal Prior for the Student t-Distribution",
+#' \emph{Axioms},
+#' <https://doi.org/10.3390/axioms11090462>
+#' Gustafson, P. (1998). "A guided walk Metropolis algorithm",
+#' \emph{Statistics and Computing},
+#' <https://link.springer.com/article/10.1023/A:1008880707168>
+
 BayesJeffreys = function(y, ini.nu = 1 , S = 1000, delta = 0.001, sampling.alg = c("MH","MALA")){
 
   if(sampling.alg == "MH"){

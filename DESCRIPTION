@@ -9,7 +9,14 @@ Authors@R:
     email = "seyoonlee.stat.math@gmail.com", 
     role = "aut"))
 Description: bayesestdft is an R package to implement sampling algorithm to estimate the degrees of freedom of the Student-t distribution. 
-License: GPL-2
+License: GPL (>= 3)
 Encoding: UTF-8
-LazyData: true
+Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
+URL: https://github.com/Roy-SR-007/bayesestdft
+BugReports: https://github.com/Roy-SR-007/bayesestdft/issues
+Imports:
+    numDeriv
+Depends: 
+    R (>= 4.0.4)
+LazyData: true
