@@ -28,21 +28,21 @@ A vector of posterior sample estimates
 \item{res}{an S-dimensional vector with the posterior samples}
 }
 \description{
-\code{BayesJeffreys} samples from the posterior distribution of the degrees of freedom (dof) with Jeffreys prior endowed upon the dof, using a random walk Metropolis algorithm and Metropolis-adjusted Langevin algorithm (MALA)
+\code{BayesJeffreys} samples from the posterior distribution of the degrees of freedom (dof) with Jeffreys prior endowed upon the dof, using a random walk Metropolis algorithm and Metropolis-adjusted Langevin algorithm (MALA).
 }
 \examples{
 
-# data from Student-t distribution with dof = 0.10
+# data from Student-t distribution with dof = 0.1
 y = rt(n = 100, df = 0.1)
 
-# running the random walk Metropolis algorithm with default settings to estimate the dof
-nu1 = BayesJeffreys(x, sampling.alg = "MH")
-# reporting the posterior mean
+# running the random walk Metropolis algorithm with default settings
+nu1 = BayesJeffreys(y, sampling.alg = "MH")
+# reporting the posterior mean estimate of the dof
 mean(nu1)
 
-# running MALA with default settings to estimate the dof
-nu2 = BayesJeffreys(x, sampling.alg = "MALA")
-# reporting the posterior mean
+# running MALA with default settings
+nu2 = BayesJeffreys(y, sampling.alg = "MALA")
+# reporting the posterior mean estimate of the dof
 mean(nu2)
 
 }
@@ -50,6 +50,7 @@ mean(nu2)
 Lee, S. Y. (2022). "The Use of a Log-Normal Prior for the Student t-Distribution",
 \emph{Axioms},
 \url{https://doi.org/10.3390/axioms11090462}
+
 Gustafson, P. (1998). "A guided walk Metropolis algorithm",
 \emph{Statistics and Computing},
 \url{https://link.springer.com/article/10.1023/A:1008880707168}

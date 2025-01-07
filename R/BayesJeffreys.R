@@ -1,7 +1,7 @@
 #'
 #' @title Estimating the Student-t degrees of freedom (dof) with a Jeffreys Prior over the dof
 #'
-#' @description `BayesJeffreys` samples from the posterior distribution of the degrees of freedom (dof) with Jeffreys prior endowed upon the dof, using a random walk Metropolis algorithm and Metropolis-adjusted Langevin algorithm (MALA)
+#' @description `BayesJeffreys` samples from the posterior distribution of the degrees of freedom (dof) with Jeffreys prior endowed upon the dof, using a random walk Metropolis algorithm and Metropolis-adjusted Langevin algorithm (MALA).
 #'
 #' @param y an N-dimensional vector of continuous observations supported on the real-line
 #' @param ini.nu the initial posterior sample value of the degrees of freedom (default is 1)
@@ -18,23 +18,24 @@
 #'
 #' @examples
 #'
-#' # data from Student-t distribution with dof = 0.10
+#' # data from Student-t distribution with dof = 0.1
 #' y = rt(n = 100, df = 0.1)
 #'
-#' # running the random walk Metropolis algorithm with default settings to estimate the dof
-#' nu1 = BayesJeffreys(x, sampling.alg = "MH")
-#' # reporting the posterior mean
+#' # running the random walk Metropolis algorithm with default settings
+#' nu1 = BayesJeffreys(y, sampling.alg = "MH")
+#' # reporting the posterior mean estimate of the dof
 #' mean(nu1)
 #'
-#' # running MALA with default settings to estimate the dof
-#' nu2 = BayesJeffreys(x, sampling.alg = "MALA")
-#' # reporting the posterior mean
+#' # running MALA with default settings
+#' nu2 = BayesJeffreys(y, sampling.alg = "MALA")
+#' # reporting the posterior mean estimate of the dof
 #' mean(nu2)
 #'
 #' @references
 #' Lee, S. Y. (2022). "The Use of a Log-Normal Prior for the Student t-Distribution",
 #' \emph{Axioms},
 #' <https://doi.org/10.3390/axioms11090462>
+#'
 #' Gustafson, P. (1998). "A guided walk Metropolis algorithm",
 #' \emph{Statistics and Computing},
 #' <https://link.springer.com/article/10.1023/A:1008880707168>
