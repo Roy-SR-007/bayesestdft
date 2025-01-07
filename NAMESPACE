@@ -3,4 +3,5 @@
 export(BayesGA)
 export(BayesJeffreys)
 export(BayesLNP)
+importFrom(dplyr,filter)
 importFrom(numDeriv,grad)

@@ -17,6 +17,7 @@ URL: https://github.com/Roy-SR-007/bayesestdft
 BugReports: https://github.com/Roy-SR-007/bayesestdft/issues
 Imports:
     numDeriv
+    dplyr
 Depends: 
     R (>= 4.0.4)
 LazyData: true

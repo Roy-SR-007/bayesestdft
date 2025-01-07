@@ -12,6 +12,8 @@
 #' @return A vector of posterior sample estimates
 #' \item{res}{an S-dimensional vector with the posterior samples}
 #'
+#' @importFrom dplyr filter
+#'
 #' @export
 #'
 #' @examples
@@ -22,6 +24,18 @@
 #' # running the Elliptical Slice Sampler (ESS) with default settings
 #' nu = BayesLNP(y)
 #' # reporting the posterior mean estimate of the dof
+#' mean(nu)
+#'
+#' # application to log-return (daily index values) of United States (S&P500)
+#' library(dplyr)
+#' data(index_return)
+#' # log-returns of United States
+#' index_return_US <- filter(index_return, Country == "United States")
+#' y = index_return_US$log_return_rate
+#'
+#' # running the Elliptical Slice Sampler (ESS) with default settings
+#' nu = BayesLNP(y)
+#' # reporting the posterior mean estimate of the dof from the log-return data of US
 #' mean(nu)
 #'
 #' @references
