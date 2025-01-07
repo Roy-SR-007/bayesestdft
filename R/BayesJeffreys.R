@@ -33,12 +33,10 @@
 #'
 #' @references
 #' Lee, S. Y. (2022). "The Use of a Log-Normal Prior for the Student t-Distribution",
-#' \emph{Axioms},
-#' <https://doi.org/10.3390/axioms11090462>
+#' \emph{Axioms}, <https://doi.org/10.3390/axioms11090462>
 #'
 #' Gustafson, P. (1998). "A guided walk Metropolis algorithm",
-#' \emph{Statistics and Computing},
-#' <https://link.springer.com/article/10.1023/A:1008880707168>
+#' \emph{Statistics and Computing}, <https://link.springer.com/article/10.1023/A:1008880707168>
 
 BayesJeffreys = function(y, ini.nu = 1 , S = 1000, delta = 0.001, sampling.alg = c("MH","MALA")){
 
