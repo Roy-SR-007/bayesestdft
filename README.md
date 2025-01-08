@@ -1,4 +1,4 @@
-# bayesestdft: Estimating the degrees of freedom of the Student-t distribution under a Bayesian framework
+## [**`bayesestdft`**]{.underline}: *Estimating the degrees of freedom of the Student's t-distribution under a Bayesian framework*
 
 ## Contents
 
@@ -12,19 +12,29 @@
 
 ## Overview {#overview}
 
-An R package `bayesestdft` includes tools to implement Bayesian estimation of the number of degrees of the freedom of the Student's t-distribution, developed by [Dr. Se Yoon Lee](https://sites.google.com/view/seyoonlee) ([seyoonlee.stat.math\@gmail.com](mailto:seyoonlee.stat.math@gmail.com){.email}). The package was developed to analyze simulated and real data from the published article ["The Use of a Log-Normal Prior for the Student t-Distribution" Axioms 2022, 11, 462"](https://www.mdpi.com/2075-1680/11/9/462). Readers can see the paper for technical details about the package. At current version, the main functions are `BayesLNP`, `BayesJeffreys`, and `BayesGA` that implement Markov Chain Monte Carlo algorithms to sample from the posterior distribution of the degrees of freedom. To operatre the function `BayesJeffreys`, user needs to install `R library(numDeriv)`. See the [Slides](https://github.com/yain22/bayesestdft/blob/master/doc/Explaining%20R%20Package%20bayesestdft.pdf) that summarized the technical parts of the R package.
+`bayesestdft` is an R package providing tools to implement Bayesian estimation of the degrees of freedom in the Student's t-distribution, that are developed in [Lee (2022)](https://doi.org/10.3390/axioms11090462). Estimation experiments are run both on simulated as well as real data, where broadly three Markov Chain Monte Carlo (MCMC) sampling algorithms are used: (i) *random walk Metropolis* (**RMW**), (ii) *Metropolis-adjusted Langevin Algorithm* (**MALA**) and (iii) *Elliptical Slice Sampler* (**ESS**) respectively, to sample from the posterior distribution of the degrees of freedom.
 
-## Required R version
+The current version of the package `bayesestdft 1.0.0` provides Bayesian routines to estimate the degrees of freedom of the Student's t-distribution with **Jeffreys** prior (`BayesJeffreys`), **Gamma** prior (`BayesGA`), and **Log-normal** prior (`BayesLNP`) endowed upon as the prior distribution over the degrees of freedom. **MALA** is used to draw posterior samples in case of the Jeffreys prior, hence to operate the function `BayesJeffreys`, the user needs to install the `numDeriv` R package. For more technical insights into `bayesestdft`, refer to the [slides](https://github.com/yain22/bayesestdft/blob/master/doc/Explaining%20R%20Package%20bayesestdft.pdf).
 
-``` r
-R version 4.0.4 (or higher)
-```
+## Installation Guide for `bayesestdft` {#installation}
 
-## Installation {#installation}
+-   An R version of **4.0.4**, or higher is required to install `bayesestdft`.
+-   **Core dependencies** include `numDeriv` and `dplyr`.
+
+Now `bayesestdft` can be installed from both **Github** and **CRAN** respectively, using the following lines of code:
+
+1.  **Github Installation**
 
 ``` r
 library(devtools)
-devtools::install_github("yain22/bayesestdft")
+devtools::install_github("Roy-SR-007/bayesestdft")
+library(bayesestdft)
+```
+
+2.  **CRAN Installation**
+
+``` r
+install.packages("bayesestdft")
 library(bayesestdft)
 ```
 

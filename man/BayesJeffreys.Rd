@@ -2,7 +2,7 @@
 % Please edit documentation in R/BayesJeffreys.R
 \name{BayesJeffreys}
 \alias{BayesJeffreys}
-\title{Estimating the Student-t degrees of freedom (dof) with a Jeffreys Prior over the dof}
+\title{Estimating the Student's t degrees of freedom (dof) with a Jeffreys Prior over the dof}
 \usage{
 BayesJeffreys(
   y,
@@ -32,7 +32,7 @@ A vector of posterior sample estimates
 }
 \examples{
 
-# data from Student-t distribution with dof = 0.1
+# data from Student's t-distribution with dof = 0.1
 y = rt(n = 100, df = 0.1)
 
 # running the random walk Metropolis algorithm with default settings
@@ -46,10 +46,9 @@ nu2 = BayesJeffreys(y, sampling.alg = "MALA")
 mean(nu2)
 
 # application to log-return (daily index values) of United States (S&P500)
-library(dplyr)
 data(index_return)
 # log-returns of United States
-index_return_US <- filter(index_return, Country == "United States")
+index_return_US <- dplyr::filter(index_return, Country == "United States")
 y = index_return_US$log_return_rate
 
 # running the random walk Metropolis algorithm with default settings

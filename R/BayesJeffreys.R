@@ -1,5 +1,5 @@
 #'
-#' @title Estimating the Student-t degrees of freedom (dof) with a Jeffreys Prior over the dof
+#' @title Estimating the Student's t degrees of freedom (dof) with a Jeffreys Prior over the dof
 #'
 #' @description `BayesJeffreys` samples from the posterior distribution of the degrees of freedom (dof) with Jeffreys prior endowed upon the dof, using a random walk Metropolis algorithm and Metropolis-adjusted Langevin algorithm (MALA).
 #'
@@ -14,12 +14,15 @@
 #'
 #' @importFrom numDeriv grad
 #' @importFrom dplyr filter
+#' @importFrom stats dnorm
+#' @importFrom stats rnorm
+#' @importFrom stats runif
 #'
 #' @export
 #'
 #' @examples
 #'
-#' # data from Student-t distribution with dof = 0.1
+#' # data from Student's t-distribution with dof = 0.1
 #' y = rt(n = 100, df = 0.1)
 #'
 #' # running the random walk Metropolis algorithm with default settings
@@ -33,10 +36,9 @@
 #' mean(nu2)
 #'
 #' # application to log-return (daily index values) of United States (S&P500)
-#' library(dplyr)
 #' data(index_return)
 #' # log-returns of United States
-#' index_return_US <- filter(index_return, Country == "United States")
+#' index_return_US <- dplyr::filter(index_return, Country == "United States")
 #' y = index_return_US$log_return_rate
 #'
 #' # running the random walk Metropolis algorithm with default settings
@@ -132,10 +134,10 @@ BayesJeffreys = function(y, ini.nu = 1 , S = 1000, delta = 0.001, sampling.alg =
   if(sampling.alg == "MALA"){
 
     # Install library(numDeriv) if missing
-    list.of.packages <- c("numDeriv")
-    new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
-    if(length(new.packages)) install.packages(new.packages)
-    library("numDeriv")
+    # list.of.packages <- c("numDeriv")
+    # new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+    # if(length(new.packages)) install.packages(new.packages)
+    # library("numDeriv")
 
     # Sample size
     N = length(y)
@@ -170,7 +172,7 @@ BayesJeffreys = function(y, ini.nu = 1 , S = 1000, delta = 0.001, sampling.alg =
         }
 
         grad_gamma_target = function(eta){
-          res = grad(func = gamma_target, x = eta)
+          res = numDeriv::grad(func = gamma_target, x = eta)
           return(res)
         }
 

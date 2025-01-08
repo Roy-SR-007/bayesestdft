@@ -2,7 +2,7 @@
 % Please edit documentation in R/BayesLNP.R
 \name{BayesLNP}
 \alias{BayesLNP}
-\title{Estimating the Student-t degrees of freedom (dof) with a Log-normal Prior over the dof}
+\title{Estimating the Student's t degrees of freedom (dof) with a Log-normal Prior over the dof}
 \usage{
 BayesLNP(y, ini.nu = 1, S = 1000, mu = 1, sigma.sq = 1)
 }
@@ -26,7 +26,7 @@ A vector of posterior sample estimates
 }
 \examples{
 
-# data from Student-t distribution with dof = 0.1
+# data from Student's t-distribution with dof = 0.1
 y = rt(n = 100, df = 0.1)
 
 # running the Elliptical Slice Sampler (ESS) with default settings
@@ -35,10 +35,9 @@ nu = BayesLNP(y)
 mean(nu)
 
 # application to log-return (daily index values) of United States (S&P500)
-library(dplyr)
 data(index_return)
 # log-returns of United States
-index_return_US <- filter(index_return, Country == "United States")
+index_return_US <- dplyr::filter(index_return, Country == "United States")
 y = index_return_US$log_return_rate
 
 # running the Elliptical Slice Sampler (ESS) with default settings
