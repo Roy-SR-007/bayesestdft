@@ -1,7 +1,7 @@
 #'
 #' @title Estimating the Student's t degrees of freedom (dof) with a Gamma Prior over the dof
 #'
-#' @description `BayesGA` samples from the posterior distribution of the degrees of freedom (dof) with Gamma prior endowed upon the dof, using a random walk Metropolis algorithm.
+#' @description `BayesGA` samples from the posterior distribution of the degrees of freedom (dof) with Gamma prior endowed upon the dof, using a random walk Metropolis (RMW) algorithm.
 #'
 #' @param y an N-dimensional vector of continuous observations supported on the real-line
 #' @param ini.nu the initial posterior sample value of the degrees of freedom (default is 1)

@@ -24,7 +24,7 @@ A vector of posterior sample estimates
 \item{res}{an S-dimensional vector with the posterior samples}
 }
 \description{
-\code{BayesGA} samples from the posterior distribution of the degrees of freedom (dof) with Gamma prior endowed upon the dof, using a random walk Metropolis algorithm.
+\code{BayesGA} samples from the posterior distribution of the degrees of freedom (dof) with Gamma prior endowed upon the dof, using a random walk Metropolis (RMW) algorithm.
 }
 \examples{
 

@@ -1,7 +1,7 @@
 #'
 #' @title Estimating the Student's t degrees of freedom (dof) with a Jeffreys Prior over the dof
 #'
-#' @description `BayesJeffreys` samples from the posterior distribution of the degrees of freedom (dof) with Jeffreys prior endowed upon the dof, using a random walk Metropolis algorithm and Metropolis-adjusted Langevin algorithm (MALA).
+#' @description `BayesJeffreys` samples from the posterior distribution of the degrees of freedom (dof) with Jeffreys prior endowed upon the dof, using a random walk Metropolis (RMW) algorithm and Metropolis-adjusted Langevin algorithm (MALA).
 #'
 #' @param y an N-dimensional vector of continuous observations supported on the real-line
 #' @param ini.nu the initial posterior sample value of the degrees of freedom (default is 1)

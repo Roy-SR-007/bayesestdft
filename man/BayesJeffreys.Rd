@@ -28,7 +28,7 @@ A vector of posterior sample estimates
 \item{res}{an S-dimensional vector with the posterior samples}
 }
 \description{
-\code{BayesJeffreys} samples from the posterior distribution of the degrees of freedom (dof) with Jeffreys prior endowed upon the dof, using a random walk Metropolis algorithm and Metropolis-adjusted Langevin algorithm (MALA).
+\code{BayesJeffreys} samples from the posterior distribution of the degrees of freedom (dof) with Jeffreys prior endowed upon the dof, using a random walk Metropolis (RMW) algorithm and Metropolis-adjusted Langevin algorithm (MALA).
 }
 \examples{
 
