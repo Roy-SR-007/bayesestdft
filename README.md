@@ -2,9 +2,9 @@
 
 ## Authors
 
-[***Somjit Roy***](https://people.tamu.edu/~sroy_123/), *Department of Statistics*, *Texas A&M University. Email: [sroy_123@tamu.edu](mailto:sroy_123@tamu.edu)*
+[***Somjit Roy***](https://people.tamu.edu/~sroy_123/), *Department of Statistics*, *Texas A&M University. Email: [sroy_123\@tamu.edu](mailto:sroy_123@tamu.edu)*
 
-[***Se Yoon Lee***](https://sites.google.com/view/seyoonlee), *Department of Statistics*, *Texas A&M University. Email: [seyonlee.stat.math@gmail.com](mailto:seyonlee.stat.math@gmail.com)*
+[***Se Yoon Lee***](https://sites.google.com/view/seyoonlee), *Department of Statistics*, *Texas A&M University. Email: [seyonlee.stat.math\@gmail.com](mailto:seyonlee.stat.math@gmail.com)*
 
 ## Overview
 
