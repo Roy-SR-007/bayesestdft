@@ -50,11 +50,11 @@ mean(nu)
 }
 \references{
 Lee, S. Y. (2022). "The Use of a Log-Normal Prior for the Student t-Distribution",
-\emph{Axioms}, \url{https://doi.org/10.3390/axioms11090462}
+\emph{Axioms}, \doi{doi:10.3390/axioms11090462}
 
 Fernández, C., Steel, M. F. (1998). "On Bayesian modeling of fat tails and skewness",
-\emph{Journal of the American Statistical Association}, \url{https://www.tandfonline.com/doi/abs/10.1080/01621459.1998.10474117}
+\emph{Journal of the American Statistical Association}, \doi{10.1080/01621459.1998.10474117}
 
 Juárez, M. A., Steel, M. F. (2010). "Model-Based Clustering of Non-Gaussian Panel Data Based on Skew-t Distributions",
-\emph{Journal of Business and Economic Statistics}, \url{https://www.tandfonline.com/doi/abs/10.1198/jbes.2009.07145}
+\emph{Journal of Business and Economic Statistics}, \doi{10.1198/jbes.2009.07145}
 }

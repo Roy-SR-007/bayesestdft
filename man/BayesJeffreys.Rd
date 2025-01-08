@@ -64,8 +64,8 @@ mean(nu2)
 }
 \references{
 Lee, S. Y. (2022). "The Use of a Log-Normal Prior for the Student t-Distribution",
-\emph{Axioms}, \url{https://doi.org/10.3390/axioms11090462}
+\emph{Axioms}, \doi{10.3390/axioms11090462}
 
 Gustafson, P. (1998). "A guided walk Metropolis algorithm",
-\emph{Statistics and Computing}, \url{https://link.springer.com/article/10.1023/A:1008880707168}
+\emph{Statistics and Computing}, \doi{10.1023/A:1008880707168}
 }

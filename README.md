@@ -52,7 +52,7 @@ $$
 
 The current version of the package `bayesestdft 1.0.0`, provides **four prior choices** $\pi(\nu)$ viz., the **Jeffreys** prior $\pi_J(\nu)$, an **exponential** prior $\pi_E(\nu)$, a **gamma** prior $\pi_G(\nu)$, and a **log-normal** prior $\pi_L(\nu)$.
 
-## Jeffreys prior [(Fonseca et al. (2008))](https://academic.oup.com/biomet/article-abstract/95/2/325/230123)
+## Jeffreys prior [(Fonseca et al. (2008))](https://doi.org/10.1093/biomet/asn001)
 
 $$ \pi_{J}(\nu) \propto \left(\frac{\nu}{\nu+3} \right)^{1/2} \left( \psi'\left(\frac{\nu}{2}\right) -\psi'\left(\frac{\nu+1}{2}\right) -\frac{2(\nu + 3)}{\nu(\nu+1)^2}\right)^{1/2},\quad \nu \in \mathbb{R}^+$$
 

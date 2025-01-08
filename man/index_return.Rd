@@ -15,7 +15,7 @@ A data frame with 4 columns:
 }
 \source{
 (Lee, 2022),
-\url{https://doi.org/10.3390/axioms11090462}.
+\doi{10.3390/axioms11090462}.
 }
 \usage{
 index_return

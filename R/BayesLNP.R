@@ -42,10 +42,10 @@
 #'
 #' @references
 #' Lee, S. Y. (2022). "The Use of a Log-Normal Prior for the Student t-Distribution",
-#' \emph{Axioms}, <https://doi.org/10.3390/axioms11090462>
+#' \emph{Axioms}, \doi{10.3390/axioms11090462}
 #'
 #' Murray, I., Prescott Adams, R., MacKay, D. J. (2010). "Elliptical slice sampling",
-#' \emph{Proceedings of the Thirteenth International Conference on Artificial Intelligence and Statistics}, <https://proceedings.mlr.press/v9/murray10a>
+#' \emph{Proceedings of the Thirteenth International Conference on Artificial Intelligence and Statistics}
 
 BayesLNP = function(y, ini.nu = 1 , S = 1000, mu = 1, sigma.sq = 1){
 
