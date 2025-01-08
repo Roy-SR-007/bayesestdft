@@ -162,10 +162,46 @@ The **trace plots** for MCMC algorithm (posterior samples obtained from **ESS** 
 
 *Heavy-tailed daily stock return index values* were considered for four countries: (i) **United States** (**S&P500**), (ii) **Japan** (**NIKKEI225**), (iii) **Germany** (**DAX Index**), and (iv) **South Korea** (**KOSPI**). Particularly, the data of **United States** (**S&P500**) from *June 02, 2009* through *October 30, 2009* is picked up for analysis resulting into a sample size of $N = 100$ observations.
 
-The **log-rate returns** (multiplied by $100$): $x_i = \log\left(X_{i+1}/X_{i}\right)\times 100$ is modeled, where $x_i$ is assumed to be Student's t-distributed and $X_i$ denotes the market index on the $i-$th trading day. The plot below shows the country-specific $x_i$'s.
+The **log-rate returns** (multiplied by $100$): $x_i = \log\left(X_{i+1}/X_{i}\right)\times 100$ is modeled, where $x_i$ is assumed to be Student's t-distributed and $X_i$ denotes the market index on the $i$-th trading day. The plot below shows the country-specific $x_i$'s.
 
 <img src="man/figures/index_return_1.png" style="display: block; margin: auto;"/>
 
+The density plot of the log-rate returns for **United States** (**S&P500**) illustrating the *heavy-tailed* nature of the observations is given below:
+
+<img src="man/figures/index_return_2.png" style="display: block; margin: auto;"/>
+
+We considering running the (i) **MALA** sampler for the **Jeffreys** prior over $\nu$, i.e., using `BayesJeffreys` for sampling $S=10000$ posterior samples, (ii) **RWM** algorithm for the **Gamma** prior over $\nu$ (with shape and rate hyper-parameters specified as, $2$ and $0.1$ respectively), i.e., using `BayesGA` for sampling $S=10000$ posterior samples, and (iii) **ESS** algorithm for the **Log-normal** prior over $\nu$ (with mean and variance hyper-parameters specified as $1$), i.e., using BayesLNP for sampling $S=10000$ posterior samples.
+
+``` r
+library(dplyr)
+
+# loading the log-rate returns data
+data(index_return)
+
+# filtering out the data specific to United States (S&P500)
+index_return_US <- filter(index_return, Country == "United States")
+x = index_return_US$log_return_rate
+
+# Jeffreys prior over the degrees of freedom
+nu_jeffreys = BayesJeffreys(x, S = 10000, sampling.alg = "MALA")
+# posterior mean (pm) estimate
+nu_jeffreys_pm = mean(nu_jeffreys)
+
+# Gamma prior over the degrees of freedom
+nu_gamma = BayesGA(x, S = 10000, a = 2, b = 0.1)
+# posterior mean (pm) estimate
+nu_gamma_pm = mean(nu_gamma)
+
+# Log-normal prior over the degrees of freedom
+nu_LNP = BayesLNP(x, S = 10000)
+# posterior mean (pm) estimate
+nu_LNP_pm = mean(nu_LNP)
+```
+
+The **trace plots** of the posterior samples are given below, for different choices of priors as employed above. The **posterior mean** estimate of the degrees of freedom is also highlighted in each of the cases.
+
+<img src="man/figures/index_return_3.png" style="display: block; margin: auto;"/>
+
 ## References
 
-[1] [Se Yoon Lee. (2022) "The Use of a Log-Normal Prior for the Student t-Distribution," Axioms](https://www.mdpi.com/2075-1680/11/9/462)
+[1] Lee, S. Y. (2022). *The Use of a Log-Normal Prior for the Student t-Distribution*. **Axioms**, 11(9), 462. <https://doi.org/10.3390/axioms11090462>.
