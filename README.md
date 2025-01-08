@@ -6,18 +6,7 @@
 
 [***Se Yoon Lee***](https://sites.google.com/view/seyoonlee), *Edwards Lifesciences*. *Email:* [*seyonlee.stat.math\@gmail.com*](*mailto:seyonlee.stat.math@gmail.com*)
 
-## Contents
-
--   [Overview](#overview)
--   [Installation](#installation)
--   [Goal](#goal)
--   [Jeffreys prior](#jeffreys-prior)
--   [Exponential prior](#exponential-prior)
--   [Gamma prior](#gamma-prior)
--   [Log-normal prior](#log-normal-prior)
--   [Real-Data study](#real-data-study)
-
-## Overview {#overview}
+## Overview
 
 `bayesestdft` is an R package providing tools to implement **Bayesian estimation** of the **degrees of freedom** in the **Student's t-distribution**, that are developed in [Lee (2022)](https://doi.org/10.3390/axioms11090462). Estimation experiments are run both on simulated as well as real data, where broadly three *Markov Chain Monte Carlo* (**MCMC**) sampling algorithms are used: (i) *random walk Metropolis* (**RMW**), (ii) *Metropolis-adjusted Langevin Algorithm* (**MALA**) and (iii) *Elliptical Slice Sampler* (**ESS**) respectively, to sample from the posterior distribution of the degrees of freedom.
 
@@ -45,7 +34,7 @@ install.packages("bayesestdft")
 library(bayesestdft)
 ```
 
-## Goal {#goal}
+## Goal
 
 `bayesestdft` facilitates a **full Bayesian framework** for the **estimation** of the **degrees of freedom** in the **Student's t-distribution**. More precisely, given $N$ independent and identical samples $x = (x_1,x_2, \cdots, x_N)$ from the Student's t-distribution:
 
@@ -135,7 +124,7 @@ The **trace plots** for MCMC algorithm (posterior samples obtained from **RWM** 
 
 <img src="man/figures/4.png" style="display: block; margin: auto;"/>
 
-## Log-normal prior {#log-normal-prior}
+## Log-normal prior
 
 The **Log-normal** prior has been suggested as a viable option in [Lee (2022)](https://doi.org/10.3390/axioms11090462) with the choice of mean and variance hyper-parameters as $1$, a justification to which has been provided through the sensitivity analysis done in **Section 4.1** of [Lee (2022)](https://doi.org/10.3390/axioms11090462).
 
@@ -158,7 +147,7 @@ The **trace plots** for MCMC algorithm (posterior samples obtained from **ESS** 
 
 <img src="man/figures/5.png" style="display: block; margin: auto;"/>
 
-## Real-Data study {#real-data-study}
+## Real-Data study
 
 *Heavy-tailed daily stock return index values* were considered for four countries: (i) **United States** (**S&P500**), (ii) **Japan** (**NIKKEI225**), (iii) **Germany** (**DAX Index**), and (iv) **South Korea** (**KOSPI**). Particularly, the data of **United States** (**S&P500**) from *June 02, 2009* through *October 30, 2009* is picked up for analysis resulting into a sample size of $N = 100$ observations.
 
