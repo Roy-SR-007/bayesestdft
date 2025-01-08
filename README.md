@@ -11,7 +11,7 @@
 -   [Log-normal prior](#log-normal-prior)
 -   [Real-Data study](#real-data-study)
 
-## Overview
+## Overview {#overview}
 
 `bayesestdft` is an R package providing tools to implement **Bayesian estimation** of the **degrees of freedom** in the **Student's t-distribution**, that are developed in [Lee (2022)](https://doi.org/10.3390/axioms11090462). Estimation experiments are run both on simulated as well as real data, where broadly three *Markov Chain Monte Carlo* (**MCMC**) sampling algorithms are used: (i) *random walk Metropolis* (**RMW**), (ii) *Metropolis-adjusted Langevin Algorithm* (**MALA**) and (iii) *Elliptical Slice Sampler* (**ESS**) respectively, to sample from the posterior distribution of the degrees of freedom.
 
@@ -57,7 +57,7 @@ $$
 
 The current version of the package `bayesestdft 1.0.0`, provides **four prior choices** $\pi(\nu)$ viz., the **Jeffreys** prior $\pi_J(\nu)$, an **exponential** prior $\pi_E(\nu)$, a **gamma** prior $\pi_G(\nu)$, and a **log-normal** prior $\pi_L(\nu)$.
 
-## Jeffreys prior [(Fonseca et al. (2008))](https://academic.oup.com/biomet/article-abstract/95/2/325/230123) {#jeffreys-prior}
+## Jeffreys prior [(Fonseca et al. (2008))](https://academic.oup.com/biomet/article-abstract/95/2/325/230123)
 
 $$ \pi_{J}(\nu) \propto \left(\frac{\nu}{\nu+3} \right)^{1/2} \left( \psi'\left(\frac{\nu}{2}\right) -\psi'\left(\frac{\nu+1}{2}\right) -\frac{2(\nu + 3)}{\nu(\nu+1)^2}\right)^{1/2},\quad \nu \in \mathbb{R}^+$$
 
@@ -79,11 +79,11 @@ mean(nu1)
 mean(nu2)
 ```
 
-The **trace plots** for MCMC algorithms (posterior samples obtained from **RWM** in [red]{style="color:red"} and those obtained from **MALA** in [blue]{style="color:blue"}) are given below, for $\nu = 0.1, 3, 10, 25$. The **posterior mean** is highlighted in [green]{style="color:green"} below.
+The **trace plots** for MCMC algorithms (posterior samples obtained from **RWM** in ***red*** and those obtained from **MALA** in ***blue***) are given below, for $\nu = 0.1, 3, 10, 25$. The **posterior mean** is highlighted in ***green*** below.
 
 <img src="man/figures/2.png" style="display: block; margin: auto;"/>
 
-## Exponential prior [(Fernández and Steel (1998))](https://doi.org/10.1080/01621459.1998.10474117) {#exponential-prior}
+## Exponential prior [(Fernández and Steel (1998))](https://doi.org/10.1080/01621459.1998.10474117)
 
 $$ \pi_{E}(\nu) =Ga(\nu|1,0.1) = Exp(\nu|0.1) = \frac{1}{10} e^{-\nu/10},\quad \nu \in \mathbb{R}^+$$
 
@@ -102,11 +102,11 @@ nu = BayesGA(x, S = 10000, a = 1, b = 0.1)
 mean(nu)
 ```
 
-The **trace plots** for MCMC algorithm (posterior samples obtained from **RWM** in [red]{style="color:red"}) are given below, for $\nu = 0.1, 3, 10, 25$. The **posterior mean** is highlighted in [green]{style="color:green"} below.
+The **trace plots** for MCMC algorithm (posterior samples obtained from **RWM** in ***red***) are given below, for $\nu = 0.1, 3, 10, 25$. The **posterior mean** is highlighted in ***green*** below.
 
 <img src="man/figures/3.png" style="display: block; margin: auto;"/>
 
-## Gamma prior [(Juárez and Steel (2010))](https://doi.org/10.1198/jbes.2009.07145) {#gamma-prior}
+## Gamma prior [(Juárez and Steel (2010))](https://doi.org/10.1198/jbes.2009.07145)
 
 $$ \pi_{G}(\nu) =Ga(\nu|2,0.1) =\frac{\nu}{100} e^{-\nu/10},\quad \nu \in \mathbb{R}^+$$
 
@@ -125,7 +125,7 @@ nu = BayesGA(x, S = 10000, a = 2, b = 0.1)
 mean(nu)
 ```
 
-The **trace plots** for MCMC algorithm (posterior samples obtained from **RWM** in [red]{style="color:red"}) are given below, for $\nu = 0.1, 3, 10, 25$. The **posterior mean** is highlighted in [green]{style="color:green"} below.
+The **trace plots** for MCMC algorithm (posterior samples obtained from **RWM** in ***red***) are given below, for $\nu = 0.1, 3, 10, 25$. The **posterior mean** is highlighted in ***green*** below.
 
 <img src="man/figures/4.png" style="display: block; margin: auto;"/>
 
@@ -148,7 +148,7 @@ nu = BayesLNP(x, S = 10000)
 mean(nu)
 ```
 
-The **trace plots** for MCMC algorithm (posterior samples obtained from **ESS** in [red]{style="color:red"}) are given below, for $\nu = 0.1, 3, 10, 25$. The **posterior mean** is highlighted in [green]{style="color:green"} below.
+The **trace plots** for MCMC algorithm (posterior samples obtained from **ESS** in ***red***) are given below, for $\nu = 0.1, 3, 10, 25$. The **posterior mean** is highlighted in ***green*** below.
 
 <img src="man/figures/5.png" style="display: block; margin: auto;"/>
 
