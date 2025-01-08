@@ -135,7 +135,7 @@ The **trace plots** for MCMC algorithm (posterior samples obtained from **RWM** 
 
 <img src="man/figures/4.png" style="display: block; margin: auto;"/>
 
-## Log-normal prior {#log-normal-prior}
+## Log-normal prior
 
 The **Log-normal** prior has been suggested as a viable option in [Lee (2022)](https://doi.org/10.3390/axioms11090462) with the choice of mean and variance hyper-parameters as $1$, a justification to which has been provided through the sensitivity analysis done in **Section 4.1** of [Lee (2022)](https://doi.org/10.3390/axioms11090462).
 
@@ -158,7 +158,7 @@ The **trace plots** for MCMC algorithm (posterior samples obtained from **ESS** 
 
 <img src="man/figures/5.png" style="display: block; margin: auto;"/>
 
-## Real-Data study {#real-data-study}
+## Real-Data study
 
 ## References
 
