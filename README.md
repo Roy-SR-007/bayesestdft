@@ -17,7 +17,7 @@
 -   [Log-normal prior](#log-normal-prior)
 -   [Real-Data study](#real-data-study)
 
-## Overview {#overview}
+## Overview
 
 `bayesestdft` is an R package providing tools to implement **Bayesian estimation** of the **degrees of freedom** in the **Student's t-distribution**, that are developed in [Lee (2022)](https://doi.org/10.3390/axioms11090462). Estimation experiments are run both on simulated as well as real data, where broadly three *Markov Chain Monte Carlo* (**MCMC**) sampling algorithms are used: (i) *random walk Metropolis* (**RMW**), (ii) *Metropolis-adjusted Langevin Algorithm* (**MALA**) and (iii) *Elliptical Slice Sampler* (**ESS**) respectively, to sample from the posterior distribution of the degrees of freedom.
 
@@ -45,7 +45,7 @@ install.packages("bayesestdft")
 library(bayesestdft)
 ```
 
-## Goal {#goal}
+## Goal
 
 `bayesestdft` facilitates a **full Bayesian framework** for the **estimation** of the **degrees of freedom** in the **Student's t-distribution**. More precisely, given $N$ independent and identical samples $x = (x_1,x_2, \cdots, x_N)$ from the Student's t-distribution:
 
@@ -159,6 +159,8 @@ The **trace plots** for MCMC algorithm (posterior samples obtained from **ESS** 
 <img src="man/figures/5.png" style="display: block; margin: auto;"/>
 
 ## Real-Data study
+
+
 
 ## References
 
