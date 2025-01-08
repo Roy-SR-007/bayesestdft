@@ -1,5 +1,11 @@
 ## **`bayesestdft`**: *Estimating the degrees of freedom of the Student's t-distribution under a Bayesian framework*
 
+## Authors
+
+[***Somjit Roy***](https://people.tamu.edu/~sroy_123/), *Department of Statistics*, *Texas A&M University. Email: [sroy_123\@tamu.edu](mailto:sroy_123@tamu.edu)*
+
+[***Se Yoon Lee***](https://sites.google.com/view/seyoonlee), *Edwards Lifesciences*. *Email:* [*seyonlee.stat.math\@gmail.com*](*mailto:seyonlee.stat.math@gmail.com*)
+
 ## Contents
 
 -   [Overview](#overview)
@@ -129,7 +135,7 @@ The **trace plots** for MCMC algorithm (posterior samples obtained from **RWM** 
 
 <img src="man/figures/4.png" style="display: block; margin: auto;"/>
 
-## Log-normal prior
+## Log-normal prior {#log-normal-prior}
 
 The **Log-normal** prior has been suggested as a viable option in [Lee (2022)](https://doi.org/10.3390/axioms11090462) with the choice of mean and variance hyper-parameters as $1$, a justification to which has been provided through the sensitivity analysis done in **Section 4.1** of [Lee (2022)](https://doi.org/10.3390/axioms11090462).
 
@@ -152,7 +158,7 @@ The **trace plots** for MCMC algorithm (posterior samples obtained from **ESS** 
 
 <img src="man/figures/5.png" style="display: block; margin: auto;"/>
 
-## Real-Data study
+## Real-Data study {#real-data-study}
 
 ## References
 
